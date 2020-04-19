@@ -3,12 +3,15 @@
 <h1>Index Page</h1>
 
 <% blogs.forEach(function(blog){ %>
+   <p>
    <div>
    	  <h2><%= blog.title %></h2>
    	  <img src="<%= blog.image %>">
-   	  <span><%= blog.created %></span>
-   	  <p><%= blog.body %></p>
+   	  <span><%= blog.created.toDateString() %></span>
+   	  <p><%- blog.body.substring(0,100) %>...
+   	  <a href="/blogs/<%= blog._id %>">Read More</a></p>
    </div>
+   </p>
 <% }) %>
 
 <%- include("partials/footer") %>
