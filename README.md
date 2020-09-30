@@ -1,4 +1,5 @@
-Simple bog app made using
+<h1>Blog-App</h1>
+Simple blog app made using
 Front-end technologies : html, css, semantic-ui 
 Back-end technologies  : nodejs, expressjs
 Database               : mongoDB
