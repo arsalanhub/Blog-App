@@ -77,12 +77,20 @@ app.get("/blogs/:id/edit",function(req, res){
 });
 
 //Update route
-app.put("/blogs/:id",function(req,res){
-    req.body.blog.body = req.sanitize(req.body.blog.body);
-    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
-        if(err) res.redirect("/blogs");
-        else res.redirect("/blogs/" + req.params.id)
-    });
+app.put("/blogs/:id", function (req, res) {
+    let body = req.body;
+   Blog.findByIdAndUpdate({ _id: req.params.id }, { $set: body}, { new: true, useFindAndModify: false }, function (err, updatedBlog) {
+       if (err) {
+           res.redirect("/blogs");
+       }
+       else {
+           updatedBlog.title = body.blog[0]
+           updatedBlog.image = body.blog[1]
+           updatedBlog.body = body.blog[2]
+           updatedBlog.save()
+           res.redirect("/blogs/" + req.params.id)
+       }
+   });
 });
 
 //Delete route
