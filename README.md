@@ -1,8 +1,8 @@
 <h1>Blog-App</h1>
 Simple blog app made using
-Front-end technologies : html, css, semantic-ui 
-Back-end technologies  : nodejs, expressjs
-Database               : mongoDB
+<div>Front-end technologies : html, css, semantic-ui</div> 
+<div>Back-end technologies  : nodejs, expressjs</div>
+<div>Database               : mongoDB</div>
 
 This blog app follow RESTful routing concept
 for CRUD(Create, Read, Update and Delete)
