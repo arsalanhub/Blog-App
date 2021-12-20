@@ -16,7 +16,7 @@ Packages Required :
 ### `npm install body-parser`
 
 Node.js body parsing middleware. Parse incoming request bodies in a middleware before your handlers, 
-available under the req.body property.
+available under the req.body erty.
 
 Note As req.body's shape is based on user-controlled input, all properties and values in this object are untrusted and 
 should be validated before trusting. For example, req.body.foo.toString() may fail in multiple ways, for example the foo 
