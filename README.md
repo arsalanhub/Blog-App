@@ -7,6 +7,31 @@ Simple blog app made using
 This blog app follow RESTful routing concept
 for CRUD(Create, Read, Update and Delete)
 
+## :file_folder: File Structure
+
+```
+C:.
+│   app.js
+│   package-lock.json
+│   package.json
+│   README.md
+│
+├───public
+│   └───stylesheet
+│           app.css
+│
+└───views
+    │   .gitignore
+    │   edit.ejs
+    │   index.ejs
+    │   new.ejs
+    │   show.ejs
+    │
+    └───partials
+            footer.ejs
+            header.ejs
+```
+
 Setup required to run the project :
 
 Download GitBash (optional), MongoDB, nodejs
