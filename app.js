@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express         = require("express"),
     app             = express(),
     methodOverride  = require("method-override"),
@@ -11,7 +12,16 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/restful_blog_app");
+mongoose.connect(process.env.DB_CONNECTION);
+const database = mongoose.connection;
+
+database.on('error', (error) => {
+    console.log(error)
+})
+
+database.once('connected', () => {
+    console.log('Database Connected');
+})
 
 app.set("view engine","ejs");
 app.use(express.static("public"));
@@ -96,5 +106,5 @@ app.delete("/blogs/:id",function(req,res){
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
-  console.log("Server Has Started!");
+  console.log("Server Has Started on port 3000!!");
 });
