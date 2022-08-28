@@ -104,7 +104,7 @@ app.delete("/blogs/:id",function(req,res){
     });
 });
 
-module.exports = app;
+// module.exports = app;
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
