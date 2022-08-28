@@ -104,6 +104,8 @@ app.delete("/blogs/:id",function(req,res){
     });
 });
 
+module.exports = app;
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started on port 3000!!");
