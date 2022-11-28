@@ -29,15 +29,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSantizer());
 app.use(methodOverride("_method"));
 
-//Mongoose/Model CONFIG
-var blogSchema = new mongoose.Schema({
-	title:   String,
-	image:   String,
-	body:    String,
-	created: {type: Date, default: Date.now}
-});
+//Importing blog schema 
 
-var Blog=mongoose.model("Blog", blogSchema);
+var Blog = require("./models/Blog");
 
 //RESTful Routes
 
